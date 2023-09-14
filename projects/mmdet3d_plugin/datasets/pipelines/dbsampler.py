@@ -199,10 +199,10 @@ class UnifiedDataBaseSampler(object):
                 count += 1
 
                 if with_img:
-                    if len(info['image_path']) > 0:
-                        img_path = os.path.join(
-                            self.data_root,
-                            info['image_path']) if self.data_root else info['image_path']
+#                    if len(info['image_path']) > 0:
+#                        img_path = os.path.join(self.data_root,info['image_path']) if self.data_root else info['image_path']
+                    if 'image_path' in info:
+                        img_path = os.path.join(self.data_root, info['image_path']) if self.data_root else info['image_path']
                         s_img = mmcv.imread(img_path,'unchanged')
                     else:
                         s_img = []
