@@ -79,8 +79,13 @@ COPY ./ /workspace/CMTCoop/
 RUN ln -s /workspace/mmdetection3d /workspace/CMTCoop/
 
 
-## dataset ------------------------------------
+## add dataset ------------------------------------
 WORKDIR /workspace/data
+RUN ln -s /mnt/datasets/00_a9_dataset /dataset
+RUN ln -s /mnt/datasets/00_a9_dataset /workspace/data/ && \
+    ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_r02_dataset_processed && \
+    ln -s /mnt/mydataset/a9_nusc_new /workspace/data/a9_r02_dataset_new_processed
+
 # RUN ln -s /mnt/datasets/09_nuscenes_mini_new /workspace/data/nuscenes && \
 #     ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset /workspace/data/a9 && \
 #     ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_nusc && \

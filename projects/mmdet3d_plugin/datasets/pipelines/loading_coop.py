@@ -10,9 +10,7 @@ from mmdet3d.core.points import BasePoints, get_points_type
 from mmdet.datasets.builder import PIPELINES
 from mmdet.datasets.pipelines import LoadAnnotations
 
-from mmdet.datasets.pipelines.loading_utils import load_augmented_point_cloud, reduce_LiDAR_beams
-
-import matplotlib.pyplot as plt
+from .loading_utils import load_augmented_point_cloud, reduce_LiDAR_beams
 
 
 @PIPELINES.register_module()
