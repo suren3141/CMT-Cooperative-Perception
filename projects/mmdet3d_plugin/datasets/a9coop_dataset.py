@@ -13,8 +13,9 @@ from scipy.spatial.transform import Rotation
 
 from mmdet.datasets import DATASETS
 
-from ..core.bbox import LiDARInstance3DBoxes
-from .custom_3d import Custom3DDataset
+# from mmdet3d.core import show_result
+from mmdet3d.core.bbox import LiDARInstance3DBoxes
+from mmdet3d.datasets.custom_3d import Custom3DDataset
 
 
 @DATASETS.register_module()
