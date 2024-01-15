@@ -73,30 +73,30 @@ RUN pip install flash-attn==0.2.2
 RUN pip install open3d && \
     pip install --upgrade git+https://github.com/klintan/pypcd.git
 
-COPY ./ /workspace/CMT/
+COPY ./ /workspace/CMTCoop/
 #WORKDIR /workspace
 #RUN git clone https://github.com/junjie18/CMT.git && cd CMT
-RUN ln -s /workspace/mmdetection3d /workspace/CMT/
+RUN ln -s /workspace/mmdetection3d /workspace/CMTCoop/
 
 
 ## dataset ------------------------------------
 WORKDIR /workspace/data
-RUN ln -s /mnt/datasets/09_nuscenes_mini_new /workspace/data/nuscenes && \
-    ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset /workspace/data/a9 && \
-    ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_nusc && \
-    ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset_new /workspace/data/a9_new && \
-    ln -s /mnt/mydataset/a9_nusc_new /workspace/data/a9_nusc_new
+# RUN ln -s /mnt/datasets/09_nuscenes_mini_new /workspace/data/nuscenes && \
+#     ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset /workspace/data/a9 && \
+#     ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_nusc && \
+#     ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset_new /workspace/data/a9_new && \
+#     ln -s /mnt/mydataset/a9_nusc_new /workspace/data/a9_nusc_new
 
 ## softlink data to repo --------------------------------
-RUN ln -s /workspace/data /workspace/CMT/data
+RUN ln -s /workspace/data /workspace/CMTCoop/data
 RUN rm -rf /workspace/mmdetection3d/data && \
     ln -s /workspace/data /workspace/mmdetection3d/data
 
 
 ## Copy files to mmdetection3d --------------------------------
-RUN cp -r /workspace/CMT/files/configs/* /workspace/mmdetection3d/configs/ && \
-    cp -r /workspace/CMT/files/mmdet3d/* /workspace/mmdetection3d/mmdet3d/ && \
-    cp -r /workspace/CMT/files/tools/* /workspace/mmdetection3d/tools/
+# RUN cp -r /workspace/CMT/files/configs/* /workspace/mmdetection3d/configs/ && \
+#     cp -r /workspace/CMT/files/mmdet3d/* /workspace/mmdetection3d/mmdet3d/ && \
+#     cp -r /workspace/CMT/files/tools/* /workspace/mmdetection3d/tools/
 
 
 ## Copy weights
@@ -110,4 +110,4 @@ RUN cp -r /workspace/CMT/files/configs/* /workspace/mmdetection3d/configs/ && \
 # #RUN export PYTHONPATH="/workspace/CMT:$PYTHONPATH"
 ENV PYTHONPATH "$PYTHONPATH:/workspace/CMT"
 
-WORKDIR /workspace/CMT
+WORKDIR /workspace/CMTCoop
