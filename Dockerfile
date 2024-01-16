@@ -86,6 +86,8 @@ RUN ln -s /mnt/datasets/00_a9_dataset /workspace/data/ && \
     ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_r02_dataset_processed && \
     ln -s /mnt/mydataset/a9_nusc_new /workspace/data/a9_r02_dataset_new_processed
 
+## renaming dataset files -----------------------
+RUN ln -s /workspace/data/00_a9_dataset/a9_coop_dataset_500_day_processed /workspace/data/a9_coop_nusc
 # RUN ln -s /mnt/datasets/09_nuscenes_mini_new /workspace/data/nuscenes && \
 #     ln -s /mnt/datasets/00_a9_dataset/a9_r02_dataset /workspace/data/a9 && \
 #     ln -s /mnt/mydataset/a9_nusc /workspace/data/a9_nusc && \
