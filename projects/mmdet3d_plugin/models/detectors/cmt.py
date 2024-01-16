@@ -71,8 +71,8 @@ class CmtDetector(MVXTwoStageDetector):
     @force_fp32(apply_to=('pts', 'img_feats'))
     def extract_pts_feat(self, pts, img_feats, img_metas):
         """Extract features of points."""
-        if not self.with_pts_bbox:
-            return None
+        # if not self.with_pts_bbox:
+        #     return None
         if pts is None:
             return None
         voxels, num_points, coors = self.voxelize(pts)

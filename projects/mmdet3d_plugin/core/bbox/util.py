@@ -18,36 +18,45 @@ def normalize_bbox(bboxes, pc_range=None):
     if bboxes.size(-1) > 7:
         vx = bboxes[..., 7:8] 
         vy = bboxes[..., 8:9]
+        # normalized_bboxes = torch.cat(
+        #     (cx, cy, w, l, cz, h, rot.sin(), rot.cos(), vx, vy), dim=-1
+        # )
         normalized_bboxes = torch.cat(
-            (cx, cy, w, l, cz, h, rot.sin(), rot.cos(), vx, vy), dim=-1
+            (cx, cy, cz, w, l, h, rot.sin(), rot.cos(), vx, vy), dim=-1
         )
     else:
         normalized_bboxes = torch.cat(
-            (cx, cy, w, l, cz, h, rot.sin(), rot.cos()), dim=-1
+            (cx, cy, cz, w, l, h, rot.sin(), rot.cos()), dim=-1
         )
+        # normalized_bboxes = torch.cat(
+        #     (cx, cy, w, l, cz, h, rot.sin(), rot.cos()), dim=-1
+        # )
     return normalized_bboxes
 
 
 def denormalize_bbox(normalized_bboxes, pc_range=None):
-    # rotation 
-    rot_sine = normalized_bboxes[..., 6:7]
-
-    rot_cosine = normalized_bboxes[..., 7:8]
-    rot = torch.atan2(rot_sine, rot_cosine)
 
     # center in the bev
     cx = normalized_bboxes[..., 0:1]
     cy = normalized_bboxes[..., 1:2]
-    cz = normalized_bboxes[..., 4:5]
+    # cz = normalized_bboxes[..., 4:5]
+    cz = normalized_bboxes[..., 2:3]
 
     # size
-    w = normalized_bboxes[..., 2:3]
-    l = normalized_bboxes[..., 3:4]
+    # w = normalized_bboxes[..., 2:3]
+    # l = normalized_bboxes[..., 3:4]
+    w = normalized_bboxes[..., 3:4]
+    l = normalized_bboxes[..., 4:5]
     h = normalized_bboxes[..., 5:6]
 
     w = w.exp() 
     l = l.exp() 
     h = h.exp() 
+
+    # rotation 
+    rot_sine = normalized_bboxes[..., 6:7]
+    rot_cosine = normalized_bboxes[..., 7:8]
+    rot = torch.atan2(rot_sine, rot_cosine)
 
     if normalized_bboxes.size(-1) > 8:
          # velocity 
