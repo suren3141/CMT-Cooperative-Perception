@@ -3,7 +3,7 @@ import argparse
 import os.path as osp
 
 from data_converter import nuscenes_converter
-from data_converter.create_gt_database import create_groundtruth_database
+from tools.data_converter.create_gt_database_cmt import create_groundtruth_database
 
 
 def nuscenes_data_prep(root_path,

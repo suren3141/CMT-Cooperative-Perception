@@ -88,8 +88,7 @@ def create_groundtruth_database(dataset_class_name,
     if database_save_path is None:
         database_save_path = osp.join(data_path, f'{info_prefix}_gt_database')
     if db_info_save_path is None:
-        db_info_save_path = osp.join(data_path,
-                                     f'{info_prefix}_dbinfos_train.pkl')
+        db_info_save_path = osp.join(data_path, f'{info_prefix}_dbinfos_train.pkl')
 
     database_pts_path = osp.join(database_save_path, 'pts_dir')
     database_img_path = osp.join(database_save_path, 'img_dir')
