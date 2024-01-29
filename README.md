@@ -14,7 +14,7 @@ Tesla A100 GPU using the best model of official repositories. All models use [sp
 </div><br/> -->
 
 CMT is a transformer-based robust 3D detector for end-to-end 3D multi-modal detection. This model is extended to cooperative perception in CMTCoop to perform deep multi-model multi-view feature fusion for 3D object detection.
-Through extensive, studies this work shows that the proposed model provides a mAP of 97.x% on multi-modal cooperative fusion (+xx% increase over vehicular perception) and 96.x% on LiDAR only cooperative perception (CMTCoop-L) which runs at near-real time FPS, and a 2.x% performance gain over the current SoTA, BEVFusionCoop.
+Through extensive, studies this work shows that the proposed model provides a mAP of 97.3% on multi-modal cooperative fusion (+6.2% increase over vehicular perception) and 96.7% on LiDAR only cooperative perception (CMTCoop-L) which runs at near-real time FPS, and a 2.1% performance gain over the current SoTA, BEVFusionCoop.
 
 <br>
 <div align="center">
@@ -74,7 +74,7 @@ Install the following packages
 
 Note that the repository was tested on the above versions, but may also work with later versions.
 
-### Dataset
+## Dataset
 
 <!-- Follow the [mmdet3d](https://github.com/open-mmlab/mmdetection3d/blob/master/docs/en/data_preparation.md) to process the nuScenes dataset. This is only required to repeat tests on the CMT model.  -->
 
@@ -97,6 +97,10 @@ ${Root}
 ```
 
 Finally ensure that the dataset folder has been softlinked to the `CMTCoop/data` folder.
+
+### Data preparation
+
+
 
 <!-- Note that the version with 500 frames (v0.9) is provided to reproduce the results listed below and in the paper as they were achieved using this older version of the dataset. The version with 800 frames (v1.0) is the latest one and includes more frames and corrected labels. -->
 
