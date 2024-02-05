@@ -184,7 +184,7 @@ bash tools/dist_test.sh /path_to_your_config /path_to_your_pth 8 --eval bbox
 
 Results on the TUMTraf cooperative **validation set**. The FPS is evaluated on a single RTX3080 GPU.
 
-### Evaluation Results (mAP<sub>BEV</sub> and mAP<sub>3D</sub> ) of CMTCoop on TraffiX Cooperative Dataset Test Set in South 2 FOV
+### Evaluation Results of CMTCoop model on TUMTraf Cooperative Dataset Test Set
 
 | Domain        | Modality    | mAP<sub>BEV</sub> | mAP<sub>3D</sub> Easy | mAP<sub>3D</sub> Mod. | mAP<sub>3D</sub> Hard | mAP<sub>3D</sub> Avg. |
 |--------------|-------------|----------------|----------------|--------------|--------------|--------------|
