@@ -268,7 +268,7 @@ Results on nuScenes **test set**. To reproduce our result, replace `ann_file=dat
 Refer the following links for other resources related to this project:
 - [Initial presentation]()
 - [Final report](./docs/IDP_Report.pdf)
-- [Final presentation](./docs/IDP_final.pptx)
+- [Final presentation](https://docs.google.com/presentation/d/1H1zfHr0BnH_xsGI7ZzYMYv3Z0eJl02HU1f5R5RPwzvU/edit?usp=sharing)
 
 ## Citation
 Please consider citing the original work on CMT if you find this work helpful.
