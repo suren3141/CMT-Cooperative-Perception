@@ -237,8 +237,9 @@ def a9coop_data_prep(root_path, info_prefix, out_dir, workers):
     save_dir = osp.join(out_dir)
     os.makedirs(save_dir, exist_ok=True, mode=0o777)
     
-    # converter = a9coop.A9Coop2Nuscenes(splits, load_dir, save_dir)
-    # converter.convert()
+    converter = a9coop.A9Coop2Nuscenes(splits, load_dir, save_dir)
+    converter.convert()
+
     create_groundtruth_database("A9NuscCoopDataset", save_dir, info_prefix, f'{save_dir}/{info_prefix}_infos_train.pkl')
 
 parser = argparse.ArgumentParser(description='Data converter arg parser')
