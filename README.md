@@ -241,7 +241,7 @@ CMTCoop south 2 Cam+LiDAR 78.92 52.67 39.76 67.21 -->
 [<img src="./figs/1688625741_352108537_vehicle_camera_basler_16mm.jpg" width="50%">](https://drive.google.com/file/d/1Te-xNnNR9YuGwsTHXI6lfpuQpcwbg6c8/view?usp=drive_link "CMT video")
 
 
-#### Performance of Cooperative model (left) vs. Vehicular only model (CMT) from infrastructure perspective.
+#### Performance of Cooperative model (CMTCoop - left) vs. Vehicular only model (CMT - right) from infrastructure perspective.
 
 [<img src="./figs/1688625741_338268958_s110_camera_basler_south2_8mm.jpg" width="50%">](https://drive.google.com/file/d/137nkUwPNB_2ygdDNXaRg9L9WOv3WG7hH/view?usp=sharing "CMT video")
 
